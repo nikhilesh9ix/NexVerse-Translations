@@ -1,11 +1,11 @@
 import streamlit as st
 from datetime import date
 from gtts import gTTS, lang
-from googletrans import Translator
+from deep_translator import GoogleTranslator
 import PyPDF2
 
 # setting app's title, icon & layout
-st.set_page_config(page_title="NexVerse", page_icon=r"E:\project\temp_image.jpg")
+st.set_page_config(page_title="NexVerse", page_icon="🌐")
 
 def get_key(val):
     """function to find the key of the given value in the dict object
@@ -53,9 +53,8 @@ def translate_pdf_text(pdf_text, dest_lang):
     Returns:
         str: Translated text.
     """
-    translator = Translator()
-    translation = translator.translate(pdf_text, dest=dest_lang)
-    return translation.text
+    translation = GoogleTranslator(source='auto', target=dest_lang).translate(pdf_text)
+    return translation
 
 def collect_feedback():
     feedback = st.sidebar.text_area("Feedback:", max_chars=500)
@@ -63,9 +62,6 @@ def collect_feedback():
         st.sidebar.success("Thank you for your feedback!")
 
 def main():
-    # instance of Translator()
-    trans = Translator()
-
     # gets gtts supported languages as dict
     indian_languages, world_languages = categorize_languages()
 
@@ -91,11 +87,12 @@ def main():
             else:
                 detect_expander = st.expander("Detected Language")
                 with detect_expander:
-                    detect = trans.detect([input_text])[0]
-                    detect_text = f"Detected Language : {indian_languages.get(detect.lang, detect.lang)}"
+                    from langdetect import detect
+                    detected_lang = detect(input_text)
+                    detect_text = f"Detected Language : {indian_languages.get(detected_lang, detected_lang)}"
                     st.success(detect_text)
 
-                    detect_audio = gTTS(text=input_text, lang=detect.lang, slow=False)
+                    detect_audio = gTTS(text=input_text, lang=detected_lang, slow=False)
                     detect_audio.save("user_detect.mp3")
                     audio_file = open("user_detect.mp3", "rb")
                     audio_bytes = audio_file.read()
@@ -103,11 +100,11 @@ def main():
 
                 trans_expander = st.expander("Translated Text")
                 with trans_expander:
-                    translation = trans.translate(input_text, dest=get_key(lang_choice))
-                    translation_text = f"Translated Text : {translation.text}"
+                    translation = GoogleTranslator(source='auto', target=get_key(lang_choice)).translate(input_text)
+                    translation_text = f"Translated Text : {translation}"
                     st.success(translation_text)
 
-                    translated_audio = gTTS(text=translation.text, lang=get_key(lang_choice), slow=False)
+                    translated_audio = gTTS(text=translation, lang=get_key(lang_choice), slow=False)
                     translated_audio.save("user_trans.mp3")
                     audio_file = open("user_trans.mp3", "rb")
                     audio_bytes = audio_file.read()
