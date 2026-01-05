@@ -1,0 +1,4 @@
+streamlit
+gtts==2.5.3
+googletrans==3.1.0a0
+PyPDF2==3.0.1
