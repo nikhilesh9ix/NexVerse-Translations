@@ -2,9 +2,11 @@
 
 > A powerful and intuitive multilingual translation application with text-to-speech capabilities, built with Streamlit.
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://streamlit.io)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://nexverse-translations.streamlit.app/)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+🚀 **[Live Demo](https://nexverse-translations.streamlit.app/)** | 📚 [Documentation](#-table-of-contents) | 🐛 [Report Bug](https://github.com/nikhilesh9ix/NexVerse-Translations/issues)
 
 ## 📋 Table of Contents
 
@@ -51,16 +53,22 @@ NexVerse-Translations is a user-friendly web application that breaks down langua
 
 ## 🎬 Demo
 
-[Add screenshots or GIF of your application here]
+### 🌟 [Try Live Demo](https://nexverse-translations.streamlit.app/)
 
+Experience NexVerse-Translations in action! The application is deployed and ready to use.
+
+**Quick Start Guide:**
 ```
-# Example Usage
-1. Select "Translate Sentence" or "Translate PDF"
-2. Choose language category (Indian/World Languages)
-3. Enter text or upload PDF
-4. Select target language
-5. Click "Translate" to see results with audio playback
+1. Visit https://nexverse-translations.streamlit.app/
+2. Select "Translate Sentence" or "Translate PDF"
+3. Choose language category (Indian/World Languages)
+4. Enter text or upload PDF
+5. Select target language
+6. Click "Translate" to see results with audio playback
+7. Download audio files for offline use
 ```
+
+[Add screenshots or GIF of your application here]
 
 ## 🛠️ Technologies Used
 
@@ -187,6 +195,7 @@ NexVerse-Translations/
 
 3. **Access your live app**
    - Your app will be available at: `https://[your-app-name].streamlit.app`
+   - **Example**: This project is live at [nexverse-translations.streamlit.app](https://nexverse-translations.streamlit.app/)
 
 ### Alternative Deployment Options
 
