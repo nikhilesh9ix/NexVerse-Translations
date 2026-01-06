@@ -6,21 +6,7 @@
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-🚀 **[Live Demo](https://nexverse-translations.streamlit.app/)** | 📚 [Documentation](#-table-of-contents) | 🐛 [Report Bug](https://github.com/nikhilesh9ix/NexVerse-Translations/issues)
-
-## 📋 Table of Contents
-
-- [Overview](#overview)
-- [Features](#features)
-- [Demo](#demo)
-- [Technologies Used](#technologies-used)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Project Structure](#project-structure)
-- [Deployment](#deployment)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
+🚀 **[Live Demo](https://nexverse-translations.streamlit.app/)** | � [Report Bug](https://github.com/nikhilesh9ix/NexVerse-Translations/issues)
 
 ## 🎯 Overview
 
@@ -173,73 +159,6 @@ NexVerse-Translations/
 - `translate_pdf_text(pdf_text, dest_lang)`: Translates PDF text to target language
 - `collect_feedback()`: Handles user feedback collection
 - `main()`: Main application logic and UI rendering
-
-## 🌐 Deployment
-
-### Streamlit Community Cloud (Recommended - FREE)
-
-1. **Prepare your repository**
-   ```bash
-   git add .
-   git commit -m "Prepare for deployment"
-   git push origin main
-   ```
-
-2. **Deploy on Streamlit Cloud**
-   - Visit [share.streamlit.io](https://share.streamlit.io)
-   - Sign in with your GitHub account
-   - Click **"New app"**
-   - Select repository: `nikhilesh9ix/NexVerse-Translations`
-   - Set main file path: `final_p.py`
-   - Click **"Deploy"**
-
-3. **Access your live app**
-   - Your app will be available at: `https://[your-app-name].streamlit.app`
-   - **Example**: This project is live at [nexverse-translations.streamlit.app](https://nexverse-translations.streamlit.app/)
-
-### Alternative Deployment Options
-
-<details>
-<summary><b>Render</b></summary>
-
-1. Visit [render.com](https://render.com)
-2. Create a new Web Service
-3. Connect your GitHub repository
-4. Configure:
-   - **Build Command**: `pip install -r requirements.txt`
-   - **Start Command**: `streamlit run final_p.py --server.port $PORT --server.address 0.0.0.0`
-5. Deploy
-</details>
-
-<details>
-<summary><b>Railway</b></summary>
-
-1. Visit [railway.app](https://railway.app)
-2. Click "New Project" → "Deploy from GitHub repo"
-3. Select your repository
-4. Railway will auto-detect and deploy your Streamlit app
-</details>
-
-<details>
-<summary><b>Heroku</b></summary>
-
-1. Create `Procfile`:
-   ```
-   web: streamlit run final_p.py --server.port $PORT --server.address 0.0.0.0
-   ```
-
-2. Create `setup.sh`:
-   ```bash
-   mkdir -p ~/.streamlit/
-   echo "[server]
-   headless = true
-   port = $PORT
-   enableCORS = false
-   " > ~/.streamlit/config.toml
-   ```
-
-3. Deploy using Heroku CLI or GitHub integration
-</details>
 
 ## 🤝 Contributing
 
